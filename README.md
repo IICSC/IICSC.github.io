@@ -1,2 +1,0 @@
-# IICSC.github.io
-home
