@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>IICSC组织</title>
+	<link rel="stylesheet" href="./fontawesome-free-6.4.0-web/css/all.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<style type="text/css">
 		body {
 			background-color: #f2f2f2;
@@ -20,9 +22,18 @@
 			margin: auto;
 			width: 150px;
 			height: 150px;
-			border-radius: 50%;
+			border-radius: 5%;
 			overflow: hidden;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+			transform: scale(1);
+			transition: transform 0.2s ease-in-out;
+		}
+		.logo:hover {
+			transform: scale(1.1);
+		}
+		.logo:active {
+			transform: scale(0.9);
+			transition-duration: 0s;
 		}
 		h1 {
 			text-align: center;
@@ -34,13 +45,38 @@
 			text-align: justify;
 			font-size: 18px;
 			line-height: 1.5;
+			text-indent: 2em;
 		}
 		.github {
-			display: block;
-			margin: auto;
+			display: inline-block;
 			margin-top: 30px;
-			width: 150px;
-			height: auto;
+			font-size: 48px;
+			color: #333;
+			transform: scale(1);
+			transition: transform 0.2s ease-in-out;
+		}
+		.github:hover {
+			transform: scale(1.1);
+		}
+		.github:active {
+			transform: scale(0.9);
+			transition-duration: 0s;
+		}
+		.bilibili {
+			display: inline-block;
+			margin-top: 30px;
+			font-size: 48px;
+			color: #333;
+			transform: scale(1);
+			transition: transform 0.2s ease-in-out;
+			color:#0aa4d7;
+		}
+		.bilibili:hover {
+			transform: scale(1.1);
+		}
+		.bilibili:active {
+			transform: scale(0.9);
+			transition-duration: 0s;
 		}
 	</style>
 </head>
@@ -49,7 +85,29 @@
 		<img src="logo.png" alt="IICSC组织Logo" class="logo">
 		<h1>IICSC组织</h1>
 		<p>欢迎来到IICSC组织的官方网站。我们致力于推动计算机科学的发展，为学术研究、工程开发和社会服务提供最优秀的资源和支持。</p>
-		<a href="https://github.com/iicsc"><img src="github.png" alt="IICSC组织Github" class="github"></a>
+		<a href="https://github.com/iicsc" target="_blank"><i class="fab fa-github github"></i></a>
+		<a href="https://space.bilibili.com/323611141" target="_blank"><i class="fab fa-bilibili bilibili"></i></a>
+	</div>
+</body>
+<body>
+	<p></p>
+	<div style="text-align:center; color: black;" class="container">
+		Version 1.0.0 (Build 2023)
+	</div>
+	
+</body>
+<body>
+	<div class="down">
+		<span id="fa-icon"></span>
+		<script src="javascript.js"></script>
+		<style>
+			/* 修改图标大小和样式 */
+			#fa-icon {
+			  font-size: 3rem;
+			  color: #1397f4;
+			  transition: transform 0.5s ease-in-out;
+			}
+			</style>
 	</div>
 </body>
 </html>
