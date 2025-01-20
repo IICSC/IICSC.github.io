@@ -2,112 +2,164 @@
 <html>
 <head>
 	<title>IICSC组织</title>
+	<!-- 添加网站图标 -->
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 	<link rel="stylesheet" href="./fontawesome-free-6.4.0-web/css/all.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<style type="text/css">
-		body {
-			background-color: #f2f2f2;
-			font-family: Arial, sans-serif;
-		}
-		.container {
-			margin: auto;
-			max-width: 800px;
-			padding: 20px;
-			background-color: #fff;
-			border-radius: 10px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-		}
-		.logo {
-			display: block;
-			margin: auto;
-			width: 150px;
-			height: 150px;
-			border-radius: 5%;
-			overflow: hidden;
-			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-			transform: scale(1);
-			transition: transform 0.2s ease-in-out;
-		}
-		.logo:hover {
-			transform: scale(1.1);
-		}
-		.logo:active {
-			transform: scale(0.9);
-			transition-duration: 0s;
-		}
-		h1 {
-			text-align: center;
-			font-size: 36px;
-			margin-top: 30px;
-			margin-bottom: 10px;
-		}
-		p {
-			text-align: justify;
-			font-size: 18px;
-			line-height: 1.5;
-			text-indent: 2em;
-		}
-		.github {
-			display: inline-block;
-			margin-top: 30px;
-			font-size: 48px;
-			color: #333;
-			transform: scale(1);
-			transition: transform 0.2s ease-in-out;
-		}
-		.github:hover {
-			transform: scale(1.1);
-		}
-		.github:active {
-			transform: scale(0.9);
-			transition-duration: 0s;
-		}
-		.bilibili {
-			display: inline-block;
-			margin-top: 30px;
-			font-size: 48px;
-			color: #333;
-			transform: scale(1);
-			transition: transform 0.2s ease-in-out;
-			color:#0aa4d7;
-		}
-		.bilibili:hover {
-			transform: scale(1.1);
-		}
-		.bilibili:active {
-			transform: scale(0.9);
-			transition-duration: 0s;
-		}
-	</style>
+	<!-- 完整的图标支持 -->
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<meta name="msapplication-TileColor" content="#2c3e50">
+	<meta name="theme-color" content="#ffffff">
 </head>
 <body>
-	<div class="container">
-		<img src="logo.png" alt="IICSC组织Logo" class="logo">
-		<h1>IICSC组织</h1>
-		<p>欢迎来到IICSC组织的官方网站。我们致力于推动计算机科学的发展，为学术研究、工程开发和社会服务提供最优秀的资源和支持。</p>
-		<a href="https://github.com/iicsc" target="_blank"><i class="fab fa-github github"></i></a>
-		<a href="https://space.bilibili.com/323611141" target="_blank"><i class="fab fa-bilibili bilibili"></i></a>
+	<!-- 导航栏 -->
+	<div class="scroll-progress"></div>
+	<nav class="navbar">
+		<div class="nav-container">
+			<a href="#home" class="nav-brand">
+				<img src="logo.png" alt="IICSC Logo" class="nav-logo">
+				<span class="nav-title">IICSC</span>
+			</a>
+			<div class="nav-links">
+				<a href="#home">首页</a>
+				<a href="#about">关于我们</a>
+				<a href="#timeline">发展历程</a>
+				<a href="#contact">联系我们</a>
+			</div>
+		</div>
+	</nav>
+
+	<!-- 主要内容 -->
+	<div class="main-content">
+		<div class="container" id="home">
+			<img src="logo.png" alt="IICSC组织Logo" class="logo">
+			<h1>IICSC组织</h1>
+			<p>欢迎来到IICSC组织的官方网站。我们致力于推动计算机科学的发展，为学术研究、工程开发和社会服务提供最优秀的资源和支持。</p>
+			<div class="social-links">
+				<a href="https://github.com/iicsc" target="_blank">
+					<i class="fab fa-github github"></i>
+				</a>
+				<a href="https://space.bilibili.com/323611141" target="_blank">
+					<i class="fab fa-bilibili bilibili"></i>
+				</a>
+			</div>
+			<div class="version-info">
+				Version 1.0.1 (Build 2025)
+			</div>
+		</div>
+
+		<!-- 时间轴 -->
+		<div class="timeline" id="timeline">
+			<div class="timeline-item">
+				<div class="timeline-content">
+					<div class="timeline-icon">
+						<i class="fas fa-rocket"></i>
+					</div>
+					<div class="timeline-date">2023</div>
+					<h3>组织成立</h3>
+					<p>IICSC组织正式成立，开始致力于计算机科学研究</p>
+				</div>
+			</div>
+			<div class="timeline-item">
+				<div class="timeline-content">
+					<div class="timeline-icon">
+						<i class="fas fa-users"></i>
+					</div>
+					<div class="timeline-date">2023</div>
+					<h3>项目启动，邀请成员</h3>
+					<p>WuXiaoMuer、
+						OrigamiGamer、
+						QingKong-s、
+						wuxiaomudebug、
+						Xnye</p>
+				</div>
+			</div>
+			<div class="timeline-item">
+				<div class="timeline-content">
+					<div class="timeline-icon">
+						<i class="fas fa-chart-line"></i>
+					</div>
+					<div class="timeline-date">2024</div>
+					<h3>快速发展，建立社区</h3>
+					<p>互联网综合PC交流裙 ① ② ③ 994035508</p>
+				</div>
+			</div>
+			<div class="timeline-item">
+				<div class="timeline-content">
+					<div class="timeline-icon">
+						<i class="fas fa-lightbulb"></i>
+					</div>
+					<div class="timeline-date">2025</div>
+					<h3>持续创新，优化项目</h3>
+					<p>https://github.com/IICSC</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- GitHub 贡献图表 -->
+		<div class="github-contributions">
+			<h2>GitHub 贡献活动</h2>
+			<div class="contribution-graph">
+				<img src="https://ghchart.rshah.org/iicsc" alt="IICSC GitHub 贡献图表">
+			</div>
+			<div class="graph-legend">
+				<span class="less">Less</span>
+				<span class="more">More</span>
+			</div>
+			
+			<!-- GitHub 成员展示 -->
+			<div class="github-members">
+				<h3>核心成员</h3>
+				<div class="members-grid">
+					<a href="https://github.com/WuXiaoMuer" class="member-card" target="_blank">
+						<img src="https://github.com/WuXiaoMuer.png" alt="WuXiaoMuer">
+						<span class="member-name">WuXiaoMuer</span>
+					</a>
+					<a href="https://github.com/OrigamiGamer" class="member-card" target="_blank">
+						<img src="https://github.com/OrigamiGamer.png" alt="OrigamiGamer">
+						<span class="member-name">OrigamiGamer</span>
+					</a>
+					<a href="https://github.com/QingKong-s" class="member-card" target="_blank">
+						<img src="https://github.com/QingKong-s.png" alt="QingKong-s">
+						<span class="member-name">QingKong-s</span>
+					</a>
+					<a href="https://github.com/wuxiaomudebug" class="member-card" target="_blank">
+						<img src="https://github.com/wuxiaomudebug.png" alt="wuxiaomudebug">
+						<span class="member-name">wuxiaomudebug</span>
+					</a>
+					<a href="https://github.com/Xnye" class="member-card" target="_blank">
+						<img src="https://github.com/Xnye.png" alt="Xnye">
+						<span class="member-name">Xnye</span>
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
-</body>
-<body>
-	<p></p>
-	<div style="text-align:center; color: black;" class="container">
-		Version 1.0.0 (Build 2023)
-	</div>
-	
-</body>
-<body>
-	<div class="down">
-		<span id="fa-icon"></span>
-		<script src="javascript.js"></script>
-		<style>
-			/* 修改图标大小和样式 */
-			#fa-icon {
-			  font-size: 3rem;
-			  color: #1397f4;
-			  transition: transform 0.5s ease-in-out;
-			}
-			</style>
-	</div>
+
+	<!-- 页脚 -->
+	<footer class="footer">
+		<div class="footer-content">
+			<div class="footer-section">
+				<h3>关于IICSC</h3>
+				<p>致力于推动计算机科学发展的开源组织</p>
+			</div>
+			<div class="footer-section">
+				<h3>联系我们</h3>
+				<p>GitHub: @iicsc</p>
+				<p>Bilibili: 雾削木官方账号</p>
+			</div>
+			<div class="footer-section">
+				<h3>快速链接</h3>
+				<p><a href="#home">首页</a></p>
+				<p><a href="#timeline">发展历程</a></p>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<p>Version 1.0.1 (Build 2025) | © 2022-2025 IICSC组织. All rights reserved.</p>
+		</div>
+	</footer>
 </body>
 </html>
