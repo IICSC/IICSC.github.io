@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![IICSC Logo](https://iicsc.github.io/images/logo.png)
+![IICSC Logo](https://iicsc.github.io/logo.png)
 
 [![GitHub stars](https://img.shields.io/github/stars/IICSC/IICSC.github.io?style=social)](https://github.com/IICSC/IICSC.github.io/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/IICSC/IICSC.github.io?style=social)](https://github.com/IICSC/IICSC.github.io/network/members)
@@ -28,12 +28,6 @@
 - 工业智能安全技术研究
 
 ## 📚 资源共享
-
-<div align="center">
-
-![Research](https://iicsc.github.io/images/research.jpg)
-
-</div>
 
 我们提供以下资源：
 
@@ -61,19 +55,12 @@
 
 ![Visitor Count](https://profile-counter.glitch.me/IICSC/count.svg)
 
-[![GitHub Activity](https://activity-graph.herokuapp.com/graph?username=IICSC&theme=github)](https://github.com/IICSC)
-
 </div>
 
 ## 🌟 支持我们
 
 如果您觉得我们的项目有价值，欢迎给我们一个 star ⭐️
 
-<div align="center">
-
-[![Star History Chart](https://api.star-history.com/svg?repos=IICSC/IICSC.github.io&type=Date)](https://star-history.com/#IICSC/IICSC.github.io&Date)
-
-</div>
 
 ## 📄 许可证
 
