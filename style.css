@@ -1,3 +1,57 @@
+/* ========== 主题变量 ========== */
+:root {
+    --bg-start: #f5f7fa;
+    --bg-end: #e4e8eb;
+    --text-primary: #2c3e50;
+    --text-secondary: #34495e;
+    --text-muted: #95a5a6;
+    --card-bg: rgba(255, 255, 255, 0.95);
+    --card-solid: #ffffff;
+    --border: #e1e4e8;
+    --hover-bg: #f6f8fa;
+    --nav-bg: rgba(255, 255, 255, 0.98);
+    --nav-bg-scrolled: rgba(255, 255, 255, 0.95);
+    --accent: #3498db;
+    --accent-strong: #2980b9;
+    --accent-soft: rgba(52, 152, 219, 0.1);
+    --accent-glow: rgba(52, 152, 219, 0.3);
+    --accent-glow-strong: rgba(52, 152, 219, 0.4);
+    --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --footer-bg: #2c3e50;
+    --footer-link: rgba(255, 255, 255, 0.8);
+    --legend-text: #586069;
+    --github-icon: #24292e;
+    --chart-filter: none;
+}
+
+html[data-theme="dark"] {
+    --bg-start: #0f1420;
+    --bg-end: #1a2232;
+    --text-primary: #e8ecf3;
+    --text-secondary: #b8c2d0;
+    --text-muted: #7a8699;
+    --card-bg: rgba(30, 38, 54, 0.92);
+    --card-solid: #1e2636;
+    --border: #2d3a52;
+    --hover-bg: #232e42;
+    --nav-bg: rgba(15, 20, 32, 0.92);
+    --nav-bg-scrolled: rgba(15, 20, 32, 0.85);
+    --accent: #4aa3e8;
+    --accent-strong: #6ab4ee;
+    --accent-soft: rgba(74, 163, 232, 0.15);
+    --accent-glow: rgba(74, 163, 232, 0.3);
+    --accent-glow-strong: rgba(74, 163, 232, 0.4);
+    --shadow-sm: 0 5px 15px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.45);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.45);
+    --footer-bg: #121826;
+    --legend-text: #8a96a8;
+    --github-icon: #e8ecf3;
+    --chart-filter: invert(0.9) hue-rotate(180deg);
+}
+
 /* 全局样式 */
 * {
     margin: 0;
@@ -6,10 +60,15 @@
     transition: all 0.3s ease;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+    background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
     font-family: 'Segoe UI', Arial, sans-serif;
     min-height: 100vh;
+    color: var(--text-secondary);
 }
 
 /* 导航栏样式优化 */
@@ -17,7 +76,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.98);
+    background: var(--nav-bg);
     backdrop-filter: blur(10px);
     padding: 0.8rem 0;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
@@ -27,7 +86,7 @@ body {
 
 .navbar.scrolled {
     padding: 0.6rem 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--nav-bg-scrolled);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,7 +113,7 @@ body {
 }
 
 .nav-title {
-    color: #2c3e50;
+    color: var(--text-primary);
     font-size: 1.5rem;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -66,7 +125,7 @@ body {
 }
 
 .nav-brand:hover .nav-title {
-    color: #3498db;
+    color: var(--accent);
 }
 
 .nav-links {
@@ -76,7 +135,7 @@ body {
 }
 
 .nav-links a {
-    color: #2c3e50;
+    color: var(--text-primary);
     text-decoration: none;
     font-weight: 500;
     padding: 0.5rem 1rem;
@@ -92,18 +151,47 @@ body {
     left: 50%;
     width: 0;
     height: 2px;
-    background: #3498db;
+    background: var(--accent);
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
 
 .nav-links a:hover {
-    color: #3498db;
-    background: rgba(52, 152, 219, 0.1);
+    color: var(--accent);
+    background: var(--accent-soft);
 }
 
 .nav-links a:hover::after {
     width: 70%;
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+    margin-left: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.theme-toggle:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: rotate(20deg) scale(1.1);
+}
+
+.theme-toggle:active {
+    transform: scale(0.92);
+    transition-duration: 0.1s;
 }
 
 /* 滚动进度条 */
@@ -121,31 +209,31 @@ body {
 
 /* 链接样式优化 */
 a {
-    color: #3498db;
+    color: var(--accent);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 a:hover {
-    color: #2980b9;
+    color: var(--accent-strong);
 }
 
 /* 时间轴优化 */
 .timeline-content p {
     line-height: 1.8;
-    color: #34495e;
+    color: var(--text-secondary);
     margin-top: 0.8rem;
 }
 
 .timeline-content h3 {
-    color: #2c3e50;
+    color: var(--text-primary);
     margin-top: 0.5rem;
     font-weight: 600;
 }
 
 /* 页脚链接优化 */
 .footer-section a {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--footer-link);
     transition: all 0.3s ease;
     position: relative;
 }
@@ -178,9 +266,9 @@ a:hover {
     margin: 2rem auto;
     max-width: 800px;
     padding: 2.5rem;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--card-bg);
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-lg);
     backdrop-filter: blur(10px);
     animation: fadeIn 1s ease-out;
     text-align: center;
@@ -188,31 +276,36 @@ a:hover {
 
 .container h1 {
     margin-bottom: 1.5rem;
-    color: #2c3e50;
+    color: var(--text-primary);
     font-weight: 600;
     letter-spacing: 1px;
     animation: slideDown 0.8s ease-out;
 }
 
+.container h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
 .container p {
-    color: #34495e;
+    color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 2rem;
-    animation: fadeIn 1s ease-out 0.3s;
-    opacity: 0;
-    animation-fill-mode: forwards;
+    /* backwards：延迟期间应用 from 态（透明），动画结束后回到自然态（可见）——
+       即使动画被禁用（如减弱动态效果），内容也始终可见 */
+    animation: fadeIn 1s ease-out 0.3s backwards;
 }
 
 /* 版本信息样式 */
 .version-info {
     margin-top: 3rem;
-    color: #95a5a6;
+    color: var(--text-muted);
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.5px;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: slideUp 0.6s ease-out 0.8s forwards;
+    animation: slideUp 0.6s ease-out 0.8s backwards;
 }
 
 /* 动画关键帧 */
@@ -234,7 +327,7 @@ a:hover {
     }
     to {
         transform: translateY(0);
-        opacity: 0.7;
+        opacity: 1;
     }
 }
 
@@ -245,6 +338,25 @@ a:hover {
     to {
         opacity: 1;
     }
+}
+
+/* ========== 组件切入动画（Apple 风格：上浮 + 缩放 + 模糊消散） ========== */
+.reveal {
+    opacity: 0;
+    transform: translateY(32px) scale(0.97);
+    filter: blur(8px);
+    transition:
+        opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--reveal-delay, 0) * 80ms);
+    will-change: opacity, transform, filter;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
 }
 
 /* 时间轴样式 */
@@ -260,7 +372,7 @@ a:hover {
     left: 50%;
     width: 2px;
     height: 100%;
-    background: #3498db;
+    background: var(--accent);
 }
 
 .timeline-item {
@@ -279,21 +391,21 @@ a:hover {
 }
 
 .timeline-content {
-    background: white;
+    background: var(--card-solid);
     padding: 1.5rem 1.5rem 1.5rem 3rem;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
     position: relative;
     transition: all 0.3s ease;
 }
 
 .timeline-content:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-md);
 }
 
 .timeline-date {
-    color: #3498db;
+    color: var(--accent);
     font-weight: bold;
 }
 
@@ -305,19 +417,19 @@ a:hover {
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
-    background: #3498db;
+    background: var(--accent);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+    box-shadow: 0 3px 10px var(--accent-glow);
     transition: all 0.3s ease;
 }
 
 .timeline-content:hover .timeline-icon {
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+    box-shadow: 0 5px 15px var(--accent-glow-strong);
 }
 
 .timeline-icon i {
@@ -341,6 +453,10 @@ a:hover {
     background: #9b59b6;  /* 紫色：持续创新 */
 }
 
+.timeline-item:nth-child(5) .timeline-icon {
+    background: #16a085;  /* 青色：生态拓展 */
+}
+
 /* 响应式调整 */
 @media (max-width: 768px) {
     .timeline-content {
@@ -360,7 +476,7 @@ a:hover {
 
 /* 页脚样式 */
 .footer {
-    background: #2c3e50;
+    background: var(--footer-bg);
     color: white;
     padding: 3rem 0;
     margin-top: 4rem;
@@ -388,16 +504,16 @@ a:hover {
 
 /* GitHub 贡献图表样式 */
 .github-contributions {
-    background: white;
+    background: var(--card-solid);
     padding: 2.5rem;
     border-radius: 15px;
     margin: 3rem auto;
     max-width: 800px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
 }
 
 .github-contributions h2 {
-    color: #24292e;
+    color: var(--text-primary);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -405,7 +521,7 @@ a:hover {
 }
 
 .contribution-graph {
-    border-top: 1px solid #e1e4e8;
+    border-top: 1px solid var(--border);
     padding: 1.5rem 0;
     margin-bottom: 1rem;
     overflow-x: auto;
@@ -418,13 +534,17 @@ a:hover {
     display: block;
 }
 
+html[data-theme="dark"] .contribution-graph img {
+    filter: var(--chart-filter);
+}
+
 .graph-legend {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 0.5rem;
     font-size: 0.85rem;
-    color: #586069;
+    color: var(--legend-text);
     margin-top: 1rem;
 }
 
@@ -489,7 +609,7 @@ a:hover {
 }
 
 .github {
-    color: #24292e;
+    color: var(--github-icon);
 }
 
 .bilibili {
@@ -511,37 +631,41 @@ a:hover {
     .nav-links {
         display: none;
     }
-    
+
     .timeline::before {
         left: 0;
     }
-    
+
     .timeline-item {
         width: 100%;
         left: 0 !important;
     }
-    
+
     .footer-content {
         grid-template-columns: 1fr;
     }
-    
+
     .logo {
         width: 100px;
         height: 100px;
     }
-    
+
     .github, .bilibili {
         font-size: 2.8rem;
         padding: 0.6rem;
     }
-    
+
     .social-links {
         gap: 2rem;
     }
-    
+
     .version-info {
         margin-top: 2rem;
         font-size: 0.8rem;
+    }
+
+    .theme-toggle {
+        margin-left: 0;
     }
 }
 
@@ -549,11 +673,11 @@ a:hover {
 .github-members {
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #e1e4e8;
+    border-top: 1px solid var(--border);
 }
 
 .github-members h3 {
-    color: #24292e;
+    color: var(--text-primary);
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -578,7 +702,7 @@ a:hover {
 }
 
 .member-card:hover {
-    background: #f6f8fa;
+    background: var(--hover-bg);
     transform: translateY(-5px);
 }
 
@@ -586,18 +710,18 @@ a:hover {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    border: 2px solid #e1e4e8;
+    border: 2px solid var(--border);
     transition: all 0.3s ease;
 }
 
 .member-card:hover img {
-    border-color: #0366d6;
+    border-color: var(--accent);
     transform: scale(1.05);
 }
 
 .member-name {
     margin-top: 0.8rem;
-    color: #24292e;
+    color: var(--text-primary);
     font-size: 0.9rem;
     font-weight: 500;
     text-align: center;
@@ -609,12 +733,12 @@ a:hover {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 1rem;
     }
-    
+
     .member-card img {
         width: 56px;
         height: 56px;
     }
-    
+
     .member-name {
         font-size: 0.8rem;
     }
@@ -629,7 +753,7 @@ a:hover {
 
 .projects-showcase h2 {
     text-align: center;
-    color: #2c3e50;
+    color: var(--text-primary);
     font-size: 2rem;
     margin-bottom: 3rem;
     position: relative;
@@ -655,16 +779,16 @@ a:hover {
 }
 
 .project-item {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--card-bg);
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-md);
 }
 
 .project-content {
@@ -688,13 +812,13 @@ a:hover {
 }
 
 .project-content h3 {
-    color: #2c3e50;
+    color: var(--text-primary);
     font-size: 1.3rem;
     margin-bottom: 1rem;
 }
 
 .project-content p {
-    color: #34495e;
+    color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -706,9 +830,9 @@ a:hover {
 
 .project-link {
     padding: 0.5rem 1rem;
-    background: rgba(52, 152, 219, 0.1);
+    background: var(--accent-soft);
     border-radius: 8px;
-    color: #3498db;
+    color: var(--accent);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -716,7 +840,7 @@ a:hover {
 }
 
 .project-link:hover {
-    background: #3498db;
+    background: var(--accent);
     color: white;
 }
 
@@ -724,11 +848,11 @@ a:hover {
     .project-list {
         grid-template-columns: 1fr;
     }
-    
+
     .projects-showcase {
         padding: 1rem;
     }
-    
+
     .project-content {
         padding: 1.5rem;
     }

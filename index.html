@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>IICSC组织</title>
+	<script>
+		// 首帧前应用主题，避免闪烁
+		(function () {
+			var theme;
+			try { theme = localStorage.getItem('theme'); } catch (e) {}
+			if (theme !== 'dark' && theme !== 'light') {
+				theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+			}
+			document.documentElement.dataset.theme = theme;
+		})();
+	</script>
 	<!-- 添加网站图标 -->
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 	<link rel="stylesheet" href="./fontawesome-free-6.4.0-web/css/all.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css?v=1.1.0">
 	<!-- 完整的图标支持 -->
 	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 	<meta name="msapplication-TileColor" content="#2c3e50">
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content="#0f1420" media="(prefers-color-scheme: dark)">
 </head>
 <body>
 	<!-- 导航栏 -->
@@ -29,6 +43,9 @@
 				<a href="#timeline">发展历程</a>
 				<a href="#contact">联系我们</a>
 			</div>
+			<button id="theme-toggle" class="theme-toggle" aria-label="切换深色模式">
+				<i class="fas fa-moon"></i>
+			</button>
 		</div>
 	</nav>
 
@@ -47,8 +64,14 @@
 				</a>
 			</div>
 			<div class="version-info">
-				Version 1.0.1 (Build 2025)
+				Version 1.1.0 (Build 2026)
 			</div>
+		</div>
+
+		<!-- 关于我们 -->
+		<div class="container" id="about">
+			<h2>关于我们</h2>
+			<p>IICSC 是一个致力于推动计算机科学发展的开源组织，为学术研究、工程开发和社会服务提供最优秀的资源和支持。</p>
 		</div>
 
 		<!-- 时间轴 -->
@@ -95,6 +118,16 @@
 					<div class="timeline-date">2025</div>
 					<h3>持续创新，优化项目</h3>
 					<p>https://github.com/IICSC</p>
+				</div>
+			</div>
+			<div class="timeline-item">
+				<div class="timeline-content">
+					<div class="timeline-icon">
+						<i class="fas fa-star"></i>
+					</div>
+					<div class="timeline-date">2026</div>
+					<h3>生态拓展，多线并进</h3>
+					<p>陆续推出 Defense、vscode-mini、engine、webinfo 等项目，覆盖 C++、JavaScript、Vue 等技术方向</p>
 				</div>
 			</div>
 		</div>
@@ -188,11 +221,8 @@
 						<h3>EPLUIST</h3>
 						<p>EPL标准模板，统一易语言 Windows UI 的设计与开发，提升应用的整体质量和用户感受。</p>
 						<div class="project-links">
-							<a href="https://github.com/IICSC/EPLUIST" class="project-link">
+							<a href="https://github.com/IICSC/EPLUIST" class="project-link" target="_blank">
 								<i class="fab fa-github"></i> GitHub
-							</a>
-							<a href="https://github.com/IICSC/EPLUIST" class="project-link">
-								<i class="fas fa-external-link-alt"></i> 在线演示
 							</a>
 						</div>
 					</div>
@@ -218,13 +248,103 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="project-item">
+					<div class="project-content">
+						<div class="project-icon">
+							<i class="fas fa-shield-alt"></i>
+						</div>
+						<h3>Defense</h3>
+						<p>使用 C++ 开发的 Defense 项目。</p>
+						<div class="project-links">
+							<a href="https://github.com/IICSC/Defense" class="project-link" target="_blank">
+								<i class="fab fa-github"></i> GitHub
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="project-item">
+					<div class="project-content">
+						<div class="project-icon">
+							<i class="fas fa-laptop-code"></i>
+						</div>
+						<h3>vscode-mini</h3>
+						<p>使用 JavaScript 开发的 vscode-mini 项目。</p>
+						<div class="project-links">
+							<a href="https://github.com/IICSC/vscode-mini" class="project-link" target="_blank">
+								<i class="fab fa-github"></i> GitHub
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="project-item">
+					<div class="project-content">
+						<div class="project-icon">
+							<i class="fas fa-cogs"></i>
+						</div>
+						<h3>engine</h3>
+						<p>使用 C++ 开发的 engine 引擎项目。</p>
+						<div class="project-links">
+							<a href="https://github.com/IICSC/engine" class="project-link" target="_blank">
+								<i class="fab fa-github"></i> GitHub
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="project-item">
+					<div class="project-content">
+						<div class="project-icon">
+							<i class="fas fa-info-circle"></i>
+						</div>
+						<h3>webinfo</h3>
+						<p>一个系统信息分析器，用于检测和展示浏览器、设备、网络、性能等各种系统信息。</p>
+						<div class="project-links">
+							<a href="https://github.com/IICSC/webinfo" class="project-link" target="_blank">
+								<i class="fab fa-github"></i> GitHub
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="project-item">
+					<div class="project-content">
+						<div class="project-icon">
+							<i class="fas fa-microchip"></i>
+						</div>
+						<h3>wuxiaomu</h3>
+						<p>雾削木，一个专注于嵌入式开发的UP主，分享单片机、STM32、ESP32 等嵌入式相关的教程和项目。</p>
+						<div class="project-links">
+							<a href="https://github.com/IICSC/wuxiaomu" class="project-link" target="_blank">
+								<i class="fab fa-github"></i> GitHub
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="project-item">
+					<div class="project-content">
+						<div class="project-icon">
+							<i class="fas fa-tasks"></i>
+						</div>
+						<h3>MyTodo</h3>
+						<p>一个简洁的 Todo 应用（Vue）。</p>
+						<div class="project-links">
+							<a href="https://github.com/IICSC/MyTodo" class="project-link" target="_blank">
+								<i class="fab fa-github"></i> GitHub
+							</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
 	</div>
 
 	<!-- 页脚 -->
-	<footer class="footer">
+	<footer class="footer" id="contact">
 		<div class="footer-content">
 			<div class="footer-section">
 				<h3>关于IICSC</h3>
@@ -242,8 +362,10 @@
 			</div>
 		</div>
 		<div class="footer-bottom">
-			<p>Version 1.0.2 (Build 2025) | © 2022-2025 IICSC组织. All rights reserved.</p>
+			<p>Version 1.1.0 (Build 2026) | © 2022-2026 IICSC组织. All rights reserved.</p>
 		</div>
 	</footer>
+
+	<script src="script.js?v=1.1.0" defer></script>
 </body>
 </html>

@@ -70,6 +70,6 @@
 
 <div align="center">
 
-**IICSC © 2024 工业互联网安全创新中心. All Rights Reserved.**
+**IICSC © 2022-2026 工业互联网安全创新中心. All Rights Reserved.**
 
 </div>
